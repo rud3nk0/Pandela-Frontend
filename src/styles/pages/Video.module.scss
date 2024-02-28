@@ -1,0 +1,391 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  margin-left: 5%;
+}
+
+.videoTitle {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 40px;
+  font-weight: 700;
+
+  opacity: 0.87;
+
+  margin-bottom: 20px;
+}
+
+.channelAvatarWithName {
+  display: flex;
+  align-items: center;
+}
+
+.channel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 60%;
+}
+
+.channelInfo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 650px;
+
+  margin-bottom: 39px;
+  margin-left: -20px;
+}
+
+.channelInfoContainer {
+  cursor: pointer;
+  margin-left: -25px;
+}
+
+.channelPhoto {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  margin-right: 40px;
+}
+
+.channelName {
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 700;
+
+  opacity: 0.87;
+
+  margin-bottom: -12px;
+}
+
+.channelSubscribers {
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 400;
+
+  opacity: 0.6;
+}
+
+.subscribeBtn {
+  cursor: pointer;
+  padding: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  border: none;
+  border-radius: 20px;
+  background: #424242;
+
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.subscribeBtn:hover {
+  background: #6b6767;
+}
+
+.channelActions {
+  display: flex;
+  border: none;
+  border-radius: 20px;
+  background: #424242;
+}
+
+.like,
+.dislike {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-right: 7px;
+  padding: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  img {
+    margin-right: 7px;
+  }
+}
+
+.like:hover,
+.dislike:hover {
+  background: #6b6767;
+  border-radius: 20px;
+}
+
+.likesCount,
+.dislikesCount {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.description {
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+  background: #424242;
+
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 400;
+
+  opacity: 0.87;
+
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  margin-bottom: 30px;
+
+  max-width: 1150px;
+
+  a {
+    color: #3da2f9;
+    text-decoration: none;
+  }
+}
+
+.readMore {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.description:hover {
+  background: #6b6767;
+}
+
+.videos {
+  margin-right: 7%;
+  margin-top: 45px;
+}
+
+.player {
+  @extend .player;
+}
+
+.videoInfo {
+  margin-right: 70px;
+
+  &.theater {
+    margin-top: 0;
+  }
+
+  &:not(.theater) {
+    margin-top: 38%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .videoInfo {
+    margin-right: 70px;
+
+    &:not(.theater) {
+      margin-top: 0%;
+    }
+  }
+
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 730px) {
+  .videoTitle {
+    font-size: 27px;
+  }
+
+  .channelPhoto {
+    width: 30px;
+    height: 30px;
+  }
+
+  .channelName {
+    font-size: 15px;
+  }
+
+  .channelSubscribers {
+    font-size: 11px;
+  }
+
+  .subscribeBtn {
+    font-size: 10px;
+  }
+
+  .like {
+    img {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .dislike {
+    img {
+      width: 10px;
+      height: 16px;
+    }
+  }
+
+  .likesCount,
+  .dislikesCount {
+    font-size: 10px;
+  }
+
+  .description {
+    font-size: 16.5px;
+  }
+
+  .readMore {
+    font-size: 17.5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .channelInfo {
+    flex-direction: column;
+    max-width: none;
+    width: 87vw;
+  }
+
+  .channel {
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 12%;
+  }
+
+  .channelActions {
+    margin-inline-start: auto;
+    margin-right: -20px;
+  }
+
+  .description {
+    max-width: none;
+    width: 87vw;
+  }
+
+  .videoTitle {
+    font-size: 18px;
+  }
+}
+
+.commentInput {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.profilePhoto {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.inputBtns {
+  margin-left: 12px;
+
+  input {
+    width: 55vw;
+    background: transparent;
+    border: none;
+
+    font-size: 14px;
+    color: #fff;
+    font-family: "Roboto";
+
+    border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+
+  input:focus {
+    outline: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+}
+
+.buttons {
+  display: none;
+  justify-content: flex-end;
+}
+
+.submitBtn,
+.cancelBtn {
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  float: right;
+}
+
+.cancelBtn {
+  margin-right: 10px;
+}
+
+.submitBtn {
+  background: #4caf50;
+  color: #fff;
+}
+
+.submitBtn:hover {
+  background: #59d35d;
+}
+
+.submitBtn:disabled {
+  background: #7c7c7c;
+  color: #0f0f0f;
+  cursor: default;
+}
+
+.cancelBtn {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+.cancelBtn:hover {
+  background: #3b3a3a;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+
+  color: #fff;
+
+  .profilePhoto {
+    cursor: pointer;
+    margin-right: 15px;
+  }
+}
+
+.commentAuthorInfo {
+  cursor: pointer;
+  margin-top: 12px;
+  margin-bottom: -10px;
+  font-size: 12px;
+}
+
+.commentAuthorSubscribers {
+  padding: 3px;
+  border-radius: 2px;
+  background: #1b1a1d;
+}
+
+.subscribersNumber {
+  color: #4caf50;
+  font-size: 11px;
+}
+
+.commentText {
+  font-size: 14px;
+}

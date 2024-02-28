@@ -1,0 +1,173 @@
+.videoCover {
+  margin-bottom: -10px;
+  width: 295.871px;
+  height: 166.371px;
+  margin-right: 6px;
+  border-radius: 20px;
+  background-size: cover;
+}
+
+.videoTitle {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 700;
+
+  opacity: 0.87;
+
+  margin-bottom: -5px;
+}
+
+.videoAuthorName {
+  margin-bottom: -10px;
+}
+
+.videoStat,
+.videoAuthorName {
+  color: #fff;
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-weight: 400;
+
+  opacity: 0.6;
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 17px;
+}
+
+// .playerCover {
+//   max-width: 314px;
+//   max-height: 168px;
+//   margin-right: 6px;
+//   border-radius: 20px;
+//   display: none;
+// }
+
+.card.video {
+  display: flex;
+
+  .videoCover {
+    max-width: 167.532px;
+    max-height: 94px;
+    margin-right: 6px;
+    border-radius: 20px;
+  }
+
+  .videoTitle {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .videoAuthorName,
+  .videoStat {
+    white-space: nowrap;
+  }
+}
+
+.card.results {
+  display: flex;
+  width: 85%;
+
+  .videoCover {
+    margin-right: 22px;
+  }
+
+  .profilePhoto {
+    width: 23.455px;
+    height: 23.455px;
+    border-radius: 100%;
+    margin-right: 5px;
+  }
+
+  span {
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 300;
+    opacity: 0.6;
+  }
+
+  .subscribersNumber {
+    color: #4caf50;
+    font-family: "Roboto";
+    opacity: 1;
+    font-size: 7px;
+    font-weight: 500;
+  }
+
+  .profileStat {
+    display: flex;
+    align-items: center;
+  }
+
+  .subscribersCount {
+    border-radius: 2px;
+    background: #1b1a1d;
+    padding: 5px;
+    font-size: 9px;
+  }
+
+  .description {
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 10px;
+    font-weight: 400;
+
+    opacity: 0.89;
+    max-width: 50%;
+  }
+}
+
+.videoTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    margin-top: 20px;
+    position: relative;
+    right: 20px;
+  }
+}
+
+.contextMenu {
+  border-radius: 0px 10px 10px 10px;
+  background: #1b1a1d;
+  width: 160px;
+  height: 60px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: -32px;
+  right: -135px;
+  z-index: 100;
+}
+
+.contextMenuItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: -15px;
+  margin-top: -5px;
+
+  p {
+    color: #fff;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 300;
+    margin-left: 2px;
+  }
+}
+// .videoCover:hover {
+//   display: none;
+// }
+
+// .videoCover:hover + .playerCover {
+//   display: block;
+// }
+
+@media (max-width: 600px) {
+}
