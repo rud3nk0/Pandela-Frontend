@@ -8,6 +8,7 @@ import CardVideo, { formatNumbers } from "../components/CardVideo";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
 import linkifyHtml from "linkify-html";
+import { clickOptions } from "@testing-library/user-event/dist/click";
 
 const Video = () => {
   // const [isTheater, setIsTheater] = useState<boolean>(false);
@@ -53,13 +54,27 @@ const Video = () => {
     }
   };
 
+  // Logick for like and dislike
+
+  const OnDislikeClick = () => {
+    const divElement = document.getElementById("dislike"); // замените "yourDivElementId" на id вашего <div>
+    if (divElement) {
+      const thumbsDownIcon = divElement.querySelector(".fa-thumbs-down");
+      if (thumbsDownIcon) {
+        thumbsDownIcon.classList.add("white-color"); // добавляем класс для изменения цвета на белый
+      }
+    }
+  };
+
+  const OnLikeClick = () => {
+
+  }
+
   return (
     <div>
       <Player src={video[0].videoPath} />
       <div className={styles.container}>
-        <div
-          className={classNames(styles.videoInfo, isTheater && styles.theater)}
-        >
+        <div className={classNames(styles.videoInfo, isTheater && styles.theater)} >
           <h2 className={styles.videoTitle}>{video[0].title}</h2>
           <div className={styles.channelInfo}>
             <div className={styles.channel}>
@@ -89,18 +104,12 @@ const Video = () => {
             </div>
 
             <div className={styles.channelActions}>
-              <div className={styles.like}>
-                <img
-                  src="https://1.downloader.disk.yandex.ru/preview/28207cd9632f4dd7ffd4e7e82b679256e66a73f8042d981b1a58369c1befd0ad/inf/q5M3dHMw52ZTVXksipMpcakEZ0tjOtuz7P6ioKEKZXqaBUj2oW2GftiV1vcC69_JR58-k1R9GGRL4bX4WYjiGQ%3D%3D?uid=1559815427&filename=heart-Filled_1_.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1559815427&tknv=v2&size=1905x930"
-                  alt="Кнопка лайка"
-                />
+              <div onClick={OnLikeClick} className={styles.like}>
+                <i className="fa-regular fa-thumbs-up"></i>
                 <p className={styles.likesCount}>{video[0].likes}</p>
               </div>
-              <div className={styles.dislike}>
-                <img
-                  src="https://3.downloader.disk.yandex.ru/preview/7431e1dc73205ec47b0bf0792f7011c3c30a5094947a80429dded0b798f91453/inf/4I6sJ9ALJQIzb1nmNyxQC996fcUApx8Hv_E3PWRNh5zTILZVCrN_bK8zSBqdKRVOqirLHUMLw3vlKvvcGKJsfQ%3D%3D?uid=1559815427&filename=bookmark-Filled.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1559815427&tknv=v2&size=1905x930"
-                  alt="Кнопка избранного"
-                />
+              <div id="dislike" onClick={OnDislikeClick} className={styles.dislike}>
+                <i className="fa-solid fa-thumbs-down"></i>
                 <p className={styles.dislikesCount}>{video[0].favorites}</p>
               </div>
             </div>
