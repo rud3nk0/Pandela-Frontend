@@ -189,27 +189,15 @@ export const videos = [
 export const users = [
   {
     userId: "ff98f875-e36b-42a1-848a-9ee173cceacc",
-    name: "Almas Kilichov",
-    username: "almasklchv",
+    name: "Dmitry Rudenko",
+    username: "rud3nk0",
     subscribersCount: 120000000,
-    profilePhoto: "https://avatars.githubusercontent.com/u/75355579?v=4",
-    bio: "web-developer, entrepreneur",
+    profilePhoto: "https://avatars.githubusercontent.com/u/130237226?v=4",
+    bio: "Web-Backend developer",
     links: [
       {
         name: "Telegram",
-        link: "https://t.me/almasklchv",
-      },
-      {
-        name: "Instagram",
-        link: "https://instagram.com/almasklchv",
-      },
-      {
-        name: "VK",
-        link: "https://vk.com/almasklchv1",
-      },
-      {
-        name: "Мой блог",
-        link: "https://t.me/thisismywayto_ru",
+        link: "https://t.me/rud3nk0",
       },
     ],
     subscriptions: ["eb23870c-a499-4682-b31b-f8db7815dadd"],

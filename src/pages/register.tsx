@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CardInput from "../components/CardInput";
 
 interface User {
@@ -8,23 +8,41 @@ interface User {
   password: string;
 }
 
-const Register = () => {
-  const onRegister = (user: User) => {
-    return fetch("https://youtube-new-s0hr.onrender.com/api/auth/signup/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("DATA:", data);
+const Register: React.FC = () => {
+  const [formData, setFormData] = useState<User>({
+    name: '',
+    username: '',
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("https://pandela-youtube.onrender.com/api/profiles/setup/<str:pk>/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      console.log("DATA:", data);
+    } catch (error) {
+      console.error('There was a problem with the fetch operation:', error);
+    }
   };
 
   return (
-    <div>
+    <div className="register-form">
       <CardInput
         inputsData={[
           { title: "Ваше имя", type: "text", name: "name" },
@@ -36,7 +54,7 @@ const Register = () => {
         buttonText="Зарегистрироваться"
         to="/login"
         linkText="Уже зарегистрированы? Войти"
-        function={onRegister}
+        function={handleSubmit}
       />
     </div>
   );

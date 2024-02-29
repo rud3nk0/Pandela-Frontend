@@ -5,6 +5,7 @@ import styles from "../styles/pages/Main.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { setCount } from "../store/availableCountSlice";
 
+
 interface RootState {
   availableCount: {
     value: number;
