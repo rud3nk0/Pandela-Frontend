@@ -29,19 +29,6 @@ export const formatNumbers = (number: number) => {
 };
 
 const CardVideo = (props: ICardVideo) => {
-  // const handlePlayVideo = () => {
-  //   const video: HTMLVideoElement | null = document.querySelector(
-  //     'video'
-  //   );
-  //   video?.play();
-  // };
-
-  // const handlePauseVideo = () => {
-  //   const video: HTMLVideoElement | null = document.querySelector(
-  //     'video'
-  //   );
-  //   video?.pause();
-  // };
 
   const creatorOfVideo = users.filter((user) => user.userId === props.userId);
   const navigate = useNavigate();
@@ -96,12 +83,7 @@ const CardVideo = (props: ICardVideo) => {
         src={props.coverPath}
         alt={props.title}
       />
-      {/* <video
-        className={styles.playerCover}
-        src={props.videoPath}
-        onMouseMove={handlePlayVideo}
-        onMouseOut={handlePauseVideo}
-      ></video> */}
+
       <div>
         <div className={styles.videoTitleContainer}>
           {" "}
@@ -126,7 +108,7 @@ const CardVideo = (props: ICardVideo) => {
         <p className={styles.videoStat}>
           {formatNumbers(props.views)} просмотров&nbsp;&nbsp;&nbsp;&nbsp;
           {props.option === "video-page" &&
-          (window.innerWidth > 1200 || window.innerWidth <= 600)
+            (window.innerWidth > 1200 || window.innerWidth <= 600)
             ? props.ago.slice(0, 3) + (props.ago.length > 7 && "...")
             : props.ago}
         </p>

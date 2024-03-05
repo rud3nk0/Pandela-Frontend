@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { videos } from "../fake-db/main";
 import CardVideo from "../components/CardVideo";
 import styles from "../styles/pages/Main.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { setCount } from "../store/availableCountSlice";
+// import { useDispatch, useSelector } from "react-redux";
+// import { setCount } from "../store/availableCountSlice";
 
 
 interface RootState {
@@ -13,28 +13,28 @@ interface RootState {
 }
 
 const Main = () => {
-  const [availableCount, setAvailableCount] = useState(0);
-  const dispatch = useDispatch();
-  const availableCountFromRedux = useSelector(
-    (state: RootState) => state.availableCount.value
-  );
+  // const [availableCount, setAvailableCount] = useState(0);
+  // const dispatch = useDispatch();
+  // const availableCountFromRedux = useSelector(
+  //   (state: RootState) => state.availableCount.value
+  // );
 
-  const handleAvailableCount = () => {
-    const screenWidth = (window.innerWidth / 100) * 80;
-    const newCount = screenWidth / 300;
-    setAvailableCount(newCount);
-    dispatch(setCount(newCount));
-  };
+  // const handleAvailableCount = () => {
+  //   const screenWidth = (window.innerWidth / 100) * 80;
+  //   const newCount = screenWidth / 300;
+  //   setAvailableCount(newCount);
+  //   dispatch(setCount(newCount));
+  // };
 
-  useEffect(() => {
-    window.addEventListener("load", handleAvailableCount);
-    window.addEventListener("resize", handleAvailableCount);
+  // useEffect(() => {
+  //   window.addEventListener("load", handleAvailableCount);
+  //   window.addEventListener("resize", handleAvailableCount);
 
-    return () => {
-      window.removeEventListener("resize", handleAvailableCount);
-      window.removeEventListener("load", handleAvailableCount);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleAvailableCount);
+  //     window.removeEventListener("load", handleAvailableCount);
+  //   };
+  // }, []);
 
   const renderVideos = (start: number, end: number) => {
     return videos.slice(start, end).map((video: any) => {
@@ -46,17 +46,27 @@ const Main = () => {
     });
   };
 
-  const initialVideoCount = availableCount > 2 ? availableCount - 1 : 3;
+  // const initialVideoCount = availableCount > 2 ? availableCount - 1 : 3;
+
+  // API for get all videos what we have
+  fetch("https://pandela-youtube.onrender.com/api/blogs/")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log("Data:", data);
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
 
   return (
     <div>
       <div className={styles.videos}>
-        {/* Popular videos */}
-        {/* {renderVideos(0, initialVideoCount)}
-        {videos.map(
-          (video: any) =>
-            video.isAd === true && <CardVideo key={video.id} {...video} />
-        )} */}
+
       </div>
       <h3 className={styles.title}>Недосмотренные видео</h3>
       {/* Last Resently */}
