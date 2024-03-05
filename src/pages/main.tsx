@@ -51,15 +51,17 @@ const Main = () => {
   return (
     <div>
       <div className={styles.videos}>
-        {renderVideos(0, initialVideoCount)}
+        {/* Popular videos */}
+        {/* {renderVideos(0, initialVideoCount)}
         {videos.map(
           (video: any) =>
             video.isAd === true && <CardVideo key={video.id} {...video} />
-        )}
+        )} */}
       </div>
       <h3 className={styles.title}>Недосмотренные видео</h3>
+      {/* Last Resently */}
       <div className={styles.videos}>
-        {renderVideos(initialVideoCount - 1, initialVideoCount * 2 + 1)}
+        {/* {renderVideos(initialVideoCount - 1, initialVideoCount * 2 + 1)} */}
       </div>
       <br />
       <br />
@@ -67,10 +69,12 @@ const Main = () => {
       <br />
       <br />
       <div className={styles.videos}>
-        {renderVideos(0, initialVideoCount + 2)}
+        {/* {renderVideos(0, initialVideoCount + 2)} */}
       </div>
       <div className={styles["ad-banner"]}>ЗДЕСЬ БУДЕТ РЕКЛАМА</div>
-      <div className={styles.videos}>{renderVideos(0, videos.length)}</div>
+      <div className={styles.videos}>
+        {/* {renderVideos(0, videos.length)} */}
+      </div>
     </div>
   );
 };

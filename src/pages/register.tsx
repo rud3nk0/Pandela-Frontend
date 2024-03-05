@@ -24,7 +24,7 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://pandela-youtube.onrender.com/api/profiles/setup/<str:pk>/", {
+      const response = await fetch("https://pandela-youtube.onrender.com/api/^auth/register\.(?P<format>[a-z0-9]+)/?$ [name='auth-register-list']", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
